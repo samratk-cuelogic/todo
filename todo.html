@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+    <title>TODO APP</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">TODO</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <div class="navbar-form navbar-right">
+                    <!-- <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div> -->
+                    <button type="button" id="btnlogout" class="btn btn-success">Logout</button>
+                </div>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <!--  <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div> -->
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-box">
+                    <p>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#fbuser-info" data-toggle="tab" role="tab" class="nav-link active" id="user_profie">User Profile</a>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="#fbtodos" data-toggle="tab" role="tab" class="nav-link active" id="todotask">Todo Taks </a>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-7 tab-content">
+                <div class="form-box tab-pane active" id="fbuser-info" role="tabpanel">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3> User info </h3>
+                            <br><span id="shmsg"></span>
+                        </div>
+                        <div class="form-top-right">
+                            <i id="edit_profile" class="fa fa-pencil rg_view"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" id="profile-form" name="profile-form" action="" method="post" class="profile-form">
+                            <div class="form-group ">
+                                <label for="email">Email :</label>
+                                <p id="rg_email" class="rg_view"></p>
+                                <input type="text" name="email" placeholder="Email..." class="form-control rg_edit_view" id="email" title="Email will be used as username.">
+                            </div>
+                            <div class="form-group rg_view">
+                                <label for="first_name">Name :</label>
+                                <p id="rg_name"></p>
+                            </div>
+                            <div class="form-group rg_edit_view">
+                                <label class="sr-only" for="first_name">First name</label>
+                                <input type="text" name="first_name" placeholder="First name..." class="form-first-name form-control" id="first_name" title="First name">
+                            </div>
+                            <div class="form-group rg_edit_view">
+                                <label class="sr-only" for="last_name">Last name</label>
+                                <input type="text" name="last_name" placeholder="Last name..." class="form-control" id="last_name" title="Last name">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender :</label>
+                                <p id="rg_gender" class="rg_view"></p>
+                                <span class="rg_edit_view">
+                                      <input type="radio" name="gender" placeholder="gender" class="" id="male" value="M" title="Gender"> Male 
+                                       <input type="radio" name="gender" placeholder="gender" class="" id="female" value="F" title="Gender"> Female 
+                                   </span>
+                            </div>
+                            <div class="form-group ">
+                                <label for="form-address">Address :</label>
+                                <p id="rg_address" class="rg_view"></p>
+                                <textarea name="address" id="address" placeholder="Address" class="form-control rg_edit_view" id="form-address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-address">Profile Image :</label>
+                                <input type="file" name="prof_pic" style="display: none;" id="prof_pic" title="Profile Picture." class="rg_edit_view" onchange="clsLocalStore.loadFile(event)">
+                                <img id="prof_pic_img" class="rg_view" src="#" alt="your image" height="50" width="50" />
+                            </div>
+                            <div class="form-group">
+                                <button type="button" style="width: 20%;" id="profile_update" class="btn btn-success rg_edit_view">Update</button>
+                                <button type="button" style="width: 20%;" id="profile_cancel" class="btn btn-success rg_edit_view">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="form-box tab-pane" role="tabpanel" id="fbtodos">
+                    <div class="form-top">
+                        <h1>TODOS</h1>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form role="form" id="todo-form" name="todo-form" action="" method="post" class="todo-form">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="task" placeholder="Task Name" required>
+                                        <span id="span_task"></span>
+                                    </div>
+                                    <div class="form-group ">
+                                        <input type="date" class="form-control" id="due_date_task">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="hidden" class="form-control" id="hidden_taskid">
+                                        <button type="button" id="add" style="width: 20%;" class="btn btn-success">Add</button>
+                                        <button type="button" id="btncancel" style="width: 20%; display: none;" class="btn btn-success">Cancel</button>
+                                    </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <a href="#" onclick="clsTaskTodo.filterdata('all')">Tasks</a> |
+                            <a href="#" onclick="clsTaskTodo.filterdata(0)">In-progress</a> |
+                            <a href="#" onclick="clsTaskTodo.filterdata(1)">Completed</a>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <input type="text" id="myInput" onkeyup="clsTaskTodo.searchTasks()" placeholder="Search for task.." title="Type in a task">
+                            <i class="fa fa-sort" onclick="clsTaskTodo.sortTaskList()" title="sort" style="font-size:28px;color:black"></i>
+                            <div id="todos"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!--  <footer>
+        <p>&copy; 2018 TODO.</p>
+      </footer> -->
+    </div>
+    <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="jstodo/local_storage.js"></script>
+    <script src="jstodo/task.js"></script>
+</body>
+
+</html>

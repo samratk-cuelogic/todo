@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="favicon.ico"> -->
+    <title>TODO APP</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="jumbotron.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">TODO</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse navbar-right">
+                <div class="navbar-form navbar-right">
+                    <!-- <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div> -->
+                    <button type="botton" id="btn-sign-in" class="btn btn-success">Sign in</button>
+                    <button type="botton" id="btn-sign-up" class="btn btn-success">Sign up</button>
+                </div>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </nav>
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="container ">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-box">
+                    <h2> Todos App </h2>
+                    <p>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                STEPS :
+                                <!-- <span class="badge badge-primary badge-pill">x</span> -->
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                1. Register
+                                <!-- <span class="badge badge-primary badge-pill">x</span> -->
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                2. Login
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                3. Set Your tasks.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-5">
+                <div class="form-box" id="fblogin">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Sign In </h3>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" id="login_form" name="login_form" action="" method="post" class="registration-form">
+                            <div class="form-group ">
+                                <label class="sr-only" for="email">Email</label>
+                                <input type="text" name="email" id="email" placeholder="Email..." class="form-control" title="Email will be used as username.">
+                            </div>
+                            <div class="form-group ">
+                                <label class="sr-only" for="password">Password</label>
+                                <input type="password" name="password" id="password" placeholder="password..." class="form-control" title="Password.">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm">Sign in</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="form-box" id="fbregister">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Sign up </h3>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" id="registration-form" name="registration-form" action="" method="post" class="registration-form">
+                            <div class="form-group ">
+                                <label class="sr-only" for="user_email">Email</label>
+                                <input type="text" name="user_email" placeholder="Email..." class="form-control" id="user_email" title="Email will be used as username.">
+                            </div>
+                            <div class="form-group ">
+                                <label class="sr-only" for="user_password">Password</label>
+                                <input type="password" name="user_password" id="user_password" placeholder="password..." class="form-control" title="Password.">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="first_name">First name</label>
+                                <input type="text" name="first_name" placeholder="First name..." class="form-first-name form-control" id="first_name" title="First name">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="last_name">Last name</label>
+                                <input type="text" name="last_name" placeholder="Last name..." class="form-control" id="last_name" title="Last name">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="gender">Gender</label>
+                                <div>
+                                    <input type="radio" name="gender" placeholder="gender" class="" id="male" value="M" title="Gender"> Male
+                                    <input type="radio" name="gender" placeholder="gender" class="" id="female" value="F" title="Gender"> Female
+                                </div>
+                                <br>
+                            </div>
+                            <div class="form-group ">
+                                <label class="sr-only" for="address">Address</label>
+                                <textarea name="address" id="address" placeholder="Address" class="form-control" id="address"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-address">Profile Image</label>
+                                <input type="file" name="prof_pic" id="prof_pic" title="Profile Picture." onchange="clsLocalStore.loadFile(event)">
+                                <img id="prof_pic_img" src="" style="display: none;" src="#" alt="your image" height="0" width="0" />
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-sm">Sign me up!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- <footer>
+        <p>&copy; 2018 TODO.</p>
+      </footer> -->
+        </div>
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.14.0/jquery.validate.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="jstodo/local_storage.js"></script>
+        <script src="jstodo/todo.js"></script>
+</body>
+
+</html>
